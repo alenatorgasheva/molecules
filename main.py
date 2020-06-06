@@ -6,7 +6,6 @@
 from molecules import Molecules
 
 
-lst_molecules = []
 while True:
     print('1 - ADD MOLECULE\n'
           '2 - START\n'
@@ -20,9 +19,8 @@ while True:
         color = input('Color: ')
         speed = input('Speed: ')
         molecule = Molecules(x, y, radius, color, speed)
-        lst_molecules.append(molecule)
     if choice == '2':
-        if lst_molecules:
+        if Molecules.lst_molecules:
             while True:
                 Molecules.act()
                 print('-' * 100)
@@ -32,6 +30,7 @@ while True:
                 if choice == '2':
                     break
         else:
+            print('-' * 100)
             print('NO MOLECULES')
 
     if choice == '3':
